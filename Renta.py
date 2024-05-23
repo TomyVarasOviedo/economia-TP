@@ -18,6 +18,7 @@ def calcularValor(tasa :float, cuotas:int, periodoInicial:date, periodoFinal:dat
     """
     Metodo para calcular el valor del activo dado un periodo
     """
+    tasa = tasa/100
     periodo = ajustarPeriodo(periodoInicial, periodoFinal)
     valor = cuotas*((((1+tasa)**periodo)-1)/tasa)
 
@@ -27,6 +28,7 @@ def calcularCuotas(valor:float, tasa:float,periodoInicial:date, periodoFinal:dat
     """
     Metodo para calcular la cantidad de cuotas que tendra el proceso
     """
+    tasa = tasa/100
     periodo = ajustarPeriodo(periodoInicial, periodoFinal)
     cuotas=valor*(tasa/(((1+tasa)**periodo) -1))
 
